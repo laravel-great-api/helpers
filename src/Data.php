@@ -19,7 +19,13 @@ class Data
 	 */
 	public function __get($name)
 	{
-		return $this->get($name);
+		$data = $this->get($name);
+
+        if (is_array($data)) {
+            return new self($data);
+        }
+
+        return $data;
 	}
 
 	/**
