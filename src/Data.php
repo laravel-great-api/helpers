@@ -130,4 +130,9 @@ class Data
     {
         return Hash::make($this->get($key), $options);
     }
+
+    public function toArray()
+    {
+        return $this->get();
+    }
 }
